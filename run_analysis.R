@@ -4,7 +4,7 @@
 # The goal of this Assignment is to prepeare tidy data that can be used for later analysis
 # This script (run_analysis.R) was developed to achive this goal
 # Datasource  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
-# The unziped Data has to be stored in "./data/UCI HAR Dataset/" based on the R home directory
+# The unziped Data has to be stored in "./UCI HAR Dataset/" based on the R home directory
 #
 # This Script does the following:
 # 1.Merges the training and the test sets to create one data set.
@@ -16,18 +16,18 @@
 library(plyr)
 library(reshape2)
 #fetch basic data
-activity_labels <- read.table("./data/UCI HAR Dataset/activity_labels.txt", col.names = c("activity_id", "activity"))
-features <- read.table("./data/UCI HAR Dataset/features.txt", col.names = c("id", "feature"))
+activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt", col.names = c("activity_id", "activity"))
+features <- read.table("./UCI HAR Dataset/features.txt", col.names = c("id", "feature"))
 
 #fetch test data
-subject_test <- read.table("./data/UCI HAR Dataset/test/subject_test.txt", col.names = "subject")
-x_test <- read.table("./data/UCI HAR Dataset/test/X_test.txt")
-y_test <- read.table("./data/UCI HAR Dataset/test/y_test.txt", col.names = "activity_id")
+subject_test <- read.table("./UCI HAR Dataset/test/subject_test.txt", col.names = "subject")
+x_test <- read.table("./UCI HAR Dataset/test/X_test.txt")
+y_test <- read.table("./UCI HAR Dataset/test/y_test.txt", col.names = "activity_id")
 
 #fetch training data
-subject_train <- read.table("./data/UCI HAR Dataset/train/subject_train.txt", col.names = "subject")
-x_train <- read.table("./data/UCI HAR Dataset/train/X_train.txt")
-y_train <- read.table("./data/UCI HAR Dataset/train/y_train.txt", col.names = "activity_id")
+subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt", col.names = "subject")
+x_train <- read.table("./UCI HAR Dataset/train/X_train.txt")
+y_train <- read.table("./UCI HAR Dataset/train/y_train.txt", col.names = "activity_id")
 
 #label the data sets with descriptive variable names
 names(x_test) <- features$feature
@@ -52,4 +52,4 @@ extract_tidy <- melt(uci_extract, id.vars=c("subject", "activity"))
 extract_tidy_mean <- dcast(extract_tidy, subject + activity ~ variable, mean)
 
 #build file
-write.table(extract_tidy_mean, "./data/UCI HAR Dataset/tidy_data_set.txt", row.names = FALSE)
+write.table(extract_tidy_mean, "./UCI HAR Dataset/tidy_data_set.txt", row.names = FALSE)

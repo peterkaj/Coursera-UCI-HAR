@@ -12,7 +12,7 @@ A full description is available at the site where the data was obtained
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
 ##Script description
-The unziped Data has to be stored in "./data/UCI HAR Dataset/" based on the R home directory.
+The unziped Data has to be stored in "./UCI HAR Dataset/" based on the R home directory.
 Run the scipt in R home directory
 
 The Script (run_analysis.R) does the following:

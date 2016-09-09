@@ -21,6 +21,7 @@ The average of the remaining mean and standard deviation values, for each activi
 * tBodyAcc-mean()-Z       ... numeric vector...Average of mean of tBodyAcc-Z measurements for each activity and subject
 * tBodyAcc-std()-X        ... numeric vector...Average of standard deviation of tBodyAcc-x measurements for each activity and subject
 * …
+
 (dataset contains of 68 vectors in total, thereof 66 vectors of measurements)
 
 You will find a detailed description of the variables/measurements in features_info.txt in the original data source.
